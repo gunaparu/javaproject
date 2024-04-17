@@ -1,2 +1,38 @@
 hello this is file
 
+import boto3
+from atlassian import Confluence
+
+# AWS S3 credentials
+ACCESS_KEY = 'your_access_key'
+SECRET_KEY = 'your_secret_key'
+BUCKET_NAME = 'your_bucket_name'
+FILE_KEY = 'your_file_key'
+
+# Confluence credentials
+CONFLUENCE_URL = 'your_confluence_url'
+PERSONAL_ACCESS_TOKEN = 'your_personal_access_token'
+CONFLUENCE_SPACE = 'your_confluence_space'
+CONFLUENCE_PAGE_TITLE = 'your_confluence_page_title'
+
+def read_data_from_s3(bucket_name, file_key, access_key, secret_key):
+    s3 = boto3.client('s3', aws_access_key_id=access_key, aws_secret_access_key=secret_key)
+    response = s3.get_object(Bucket=bucket_name, Key=file_key)
+    data = response['Body'].read().decode('utf-8')
+    return data
+
+def display_data_in_confluence(data, confluence_url, access_token, space, page_title):
+    confluence = Confluence(
+        url=confluence_url,
+        username='ignored',  # Set username to any non-empty value
+        password=access_token  # Use access token as password
+    )
+    page_id = confluence.get_page_id(space, page_title)
+    if not page_id:
+        print("Page not found. Creating a new page...")
+        page_id = confluence.create_page(space, page_title)
+    confluence.update_page(page_id, data)
+
+if __name__ == "__main__":
+    data_from_s3 = read_data_from_s3(BUCKET_NAME, FILE_KEY, ACCESS_KEY, SECRET_KEY)
+    display_data_in_confluence(data_from_s3, CONFLUENCE_URL, PERSONAL_ACCESS_TOKEN, CONFLUENCE_SPACE, CONFLUENCE_PAGE_TITLE)
