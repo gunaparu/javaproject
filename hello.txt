@@ -1,3 +1,59 @@
+import boto3
+from botocore.exceptions import ClientError
+
+def send_email(sender_email, recipient_email, subject, body):
+    # Create a new SES client
+    ses_client = boto3.client('ses')
+
+    # Try to send the email
+    try:
+        # Send the email
+        response = ses_client.send_email(
+            Destination={
+                'ToAddresses': [
+                    recipient_email,
+                ],
+            },
+            Message={
+                'Body': {
+                    'Text': {
+                        'Charset': 'UTF-8',
+                        'Data': body,
+                    },
+                },
+                'Subject': {
+                    'Charset': 'UTF-8',
+                    'Data': subject,
+                },
+            },
+            Source=sender_email,
+        )
+    except ClientError as e:
+        # Print error message if sending fails
+        print(f"Error: {e.response['Error']['Message']}")
+    else:
+        print("Email sent successfully!")
+        print("Message ID:", response['MessageId'])
+
+def main():
+    # Sender email address
+    sender_email = 'your_sender_email@example.com'
+    
+    # Recipient email address
+    recipient_email = 'recipient@example.com'
+    
+    # Email subject
+    subject = 'Test Email from Amazon SES'
+    
+    # Email body
+    body = 'This is a test email sent from Amazon SES using Boto3.'
+
+    # Send email
+    send_email(sender_email, recipient_email, subject, body)
+
+if __name__ == "__main__":
+    main()
+
 hello this is file
 
 import boto3
