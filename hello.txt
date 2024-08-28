@@ -92,3 +92,69 @@ def display_data_in_confluence(data, confluence_url, access_token, space, page_t
 if __name__ == "__main__":
     data_from_s3 = read_data_from_s3(BUCKET_NAME, FILE_KEY, ACCESS_KEY, SECRET_KEY)
     display_data_in_confluence(data_from_s3, CONFLUENCE_URL, PERSONAL_ACCESS_TOKEN, CONFLUENCE_SPACE, CONFLUENCE_PAGE_TITLE)
+
+
+
+
+
+Here’s an additional question under each section, along with an example scenario, to further deepen the evaluation of Wiz.io:
+
+### 1. **Data Encryption**
+   - **Question**: How does Wiz.io ensure encryption consistency across hybrid cloud and on-prem environments, and can it identify unencrypted sensitive data?
+     - *Example*: "If we have hybrid environments with on-prem databases and cloud data lakes, how does Wiz.io ensure that data remains encrypted during migrations between these environments, and will it detect any instances of unencrypted sensitive data?"
+
+### 2. **Access Control and Authentication**
+   - **Question**: Does Wiz.io provide real-time alerts for abnormal access patterns, such as unusual geographic locations or access times for sensitive data?
+     - *Example*: "If an employee accesses sensitive financial data from an unexpected location, like another country, or outside of regular business hours, will Wiz.io detect this as suspicious and alert our security team?"
+
+### 3. **Data Masking and Anonymization**
+   - **Question**: Can Wiz.io track and report on where masked or anonymized data has been accessed, and does it ensure consistent application of masking across environments?
+     - *Example*: "If masked customer data is accessed in a testing environment, will Wiz.io provide audit logs showing when and by whom this data was accessed, ensuring consistent masking across all non-production environments?"
+
+### 4. **Data Governance**
+   - **Question**: How does Wiz.io assist in enforcing data governance policies in decentralized environments with various cloud providers and data stores?
+     - *Example*: "In a decentralized multi-cloud environment, how does Wiz.io help us enforce consistent data governance policies, such as ensuring that all PII data is classified and governed according to our internal standards?"
+
+### 5. **Incident Response and Breach Detection**
+   - **Question**: Does Wiz.io integrate with Security Information and Event Management (SIEM) systems for faster incident correlation and response?
+     - *Example*: "If Wiz.io detects a data breach involving sensitive data, can it automatically push this alert into our SIEM platform (e.g., Splunk) for immediate investigation and correlation with other security events?"
+
+### 6. **Data Store Vulnerabilities**
+   - **Question**: How frequently does Wiz.io update its vulnerability database, and can it proactively detect zero-day vulnerabilities within our data stores?
+     - *Example*: "If a new zero-day vulnerability affecting our MongoDB instances is discovered, how quickly does Wiz.io update its vulnerability database and alert us to the risk, even before a patch is available?"
+
+### 7. **Compliance and Regulatory Reporting**
+   - **Question**: Does Wiz.io provide continuous monitoring for compliance, and can it alert us in real-time when a data store falls out of compliance with specific regulations?
+     - *Example*: "If an S3 bucket containing GDPR-regulated data suddenly becomes publicly accessible due to a configuration error, will Wiz.io immediately alert us to this compliance violation?"
+
+### 8. **Data Lifecycle and Retention Policies**
+   - **Question**: Can Wiz.io enforce data lifecycle policies based on specific regulatory requirements (e.g., GDPR data erasure) across different data stores?
+     - *Example*: "If we are subject to GDPR, how does Wiz.io ensure that customer data marked for deletion is securely erased across all systems, and will it generate reports to verify compliance with this regulation?"
+
+### 9. **Backup and Recovery**
+   - **Question**: How does Wiz.io ensure that restored data from backups adheres to the latest security and compliance policies, particularly after a security patch or policy change?
+     - *Example*: "If we restore a backup after a security patch or new compliance policy has been enforced, will Wiz.io ensure that the restored data conforms to the updated policies, or flag any potential issues?"
+
+### 10. **Data Movement and Transfer**
+   - **Question**: Does Wiz.io track data movement not just across environments but also within applications and services to ensure data remains secure during processing?
+     - *Example*: "If sensitive data is processed and moved between microservices in a distributed application, will Wiz.io monitor this internal movement and flag any insecure transfers or unauthorized access points?"
+
+### 11. **Privacy Controls**
+   - **Question**: Can Wiz.io ensure that data minimization principles are being adhered to, such as restricting the collection of unnecessary personal data?
+     - *Example*: "When a new application is collecting user data, does Wiz.io help verify that only the necessary minimum amount of personal information is being collected, in compliance with privacy regulations like GDPR?"
+
+### 12. **Shadow IT and Rogue Data Stores**
+   - **Question**: How does Wiz.io handle the automatic decommissioning or isolation of rogue data stores that are identified as security risks?
+     - *Example*: "If a shadow database containing sensitive customer data is discovered, does Wiz.io provide options to automatically decommission or isolate this data store to prevent further risk while notifying the appropriate teams?"
+
+### 13. **Inter-Cloud and Multi-Cloud Data Security**
+   - **Question**: How does Wiz.io provide unified security controls and monitoring for sensitive data that flows between different cloud providers?
+     - *Example*: "If sensitive data moves between AWS and Azure, how does Wiz.io ensure consistent security controls and visibility across both platforms, preventing misconfigurations during transfers?"
+
+### 14. **Performance Monitoring and Optimization**
+   - **Question**: Can Wiz.io dynamically adjust its scanning frequency or intensity based on the real-time performance of the data stores it monitors?
+     - *Example*: "If our critical data stores experience high traffic during certain hours, will Wiz.io automatically adjust its scanning processes to reduce the performance impact during these peak times while still ensuring data security?"
+
+---
+
+These additional questions aim to expand the depth of your assessment of Wiz.io, allowing you to gauge its capabilities not just in scanning and reporting, but also in areas such as governance, privacy, performance optimization, and proactive incident response.
