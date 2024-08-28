@@ -92,3 +92,74 @@ def display_data_in_confluence(data, confluence_url, access_token, space, page_t
 if __name__ == "__main__":
     data_from_s3 = read_data_from_s3(BUCKET_NAME, FILE_KEY, ACCESS_KEY, SECRET_KEY)
     display_data_in_confluence(data_from_s3, CONFLUENCE_URL, PERSONAL_ACCESS_TOKEN, CONFLUENCE_SPACE, CONFLUENCE_PAGE_TITLE)
+
+
+
+
+
+Absolutely! Here’s a broader set of questions covering not just scanning but other important areas such as reporting, integrations, security, compliance, performance, and usability to assess Wiz.io’s overall capabilities:
+
+### 1. **Scanning and Detection**
+   - **Scanning Coverage**: Does Wiz.io scan all types of data sources (databases, cloud storage, SaaS apps, etc.) equally, or are there differences in depth or frequency for each type?
+   - **Efficiency**: How does Wiz.io handle large data sources in distributed environments (e.g., big data systems)? Are there specific performance improvements in place for scanning big data?
+   - **Real-Time Monitoring**: Does Wiz.io offer real-time monitoring for newly created data? If so, how does it balance real-time data security checks with overall system performance?
+
+### 2. **Data Classification and Sensitivity**
+   - **Classification Models**: How does Wiz.io classify sensitive data? Are classification models pre-built, customizable, or trained based on specific data patterns from the customer’s environment?
+   - **Industry-Specific Classifications**: Are there built-in data classifications for industry-specific sensitive data (e.g., financial data, healthcare records, etc.)? Can new data types be added based on organizational needs?
+
+### 3. **Integration and Automation**
+   - **Existing Tools Integration**: How does Wiz.io integrate with existing security tools like SIEMs, SOAR platforms, or DLP solutions? Are there native connectors, APIs, or third-party integration capabilities?
+   - **CI/CD Pipeline Integration**: Can Wiz.io be integrated into CI/CD pipelines to ensure security during development and deployment? If so, how does it flag security issues in real-time as code and data models evolve?
+   - **Automation**: Does Wiz.io support automated remediation actions (e.g., revoking access, alerting security teams) when sensitive data is exposed? How customizable are these automated actions?
+
+### 4. **Reporting and Insights**
+   - **Report Customization**: How customizable are Wiz.io’s reports? Can users tailor reports based on specific regulatory frameworks (e.g., GDPR, HIPAA, PCI-DSS), data types, or internal policies?
+   - **Actionable Insights**: How actionable are the insights provided by Wiz.io? For example, are specific remediation steps suggested when risks are identified?
+   - **Report Accuracy**: How does Wiz.io validate the accuracy of its reports, especially when identifying sensitive data and flagging risks? Are there periodic reviews of data accuracy in reports?
+
+### 5. **Security and Compliance**
+   - **Data Protection and Privacy**: How does Wiz.io protect the data it processes during scans? What encryption methods are in place both in transit and at rest?
+   - **Compliance Alignment**: How does Wiz.io help organizations comply with regulatory requirements? Does it have out-of-the-box support for common frameworks (e.g., CCPA, ISO 27001)? Can the compliance checks be customized?
+   - **Auditability**: Does Wiz.io provide audit logs for all actions taken on sensitive data, including who accessed the data, when, and what changes were made? Are these logs tamper-proof?
+
+### 6. **Data Handling and Retention**
+   - **Data Retention Policies**: How does Wiz.io handle the retention of sensitive data discovered during scans? Are there customizable data retention policies in place?
+   - **Sensitive Data Storage**: Does Wiz.io store any sensitive data as part of its analysis? If so, what controls are in place to ensure that this stored data is protected?
+
+### 7. **User and Access Management**
+   - **RBAC (Role-Based Access Control)**: How granular are the role-based access controls in Wiz.io? Can administrators assign different permission levels for various users or teams (e.g., read-only vs full access)?
+   - **Access Management for Sensitive Data**: How does Wiz.io help manage and audit who has access to sensitive data across the organization? Can it trigger alerts if users gain unauthorized access to sensitive data?
+
+### 8. **Performance and Scalability**
+   - **Scaling for Large Environments**: How does Wiz.io scale in large, complex environments? Does it support horizontal scaling to accommodate larger datasets without performance degradation?
+   - **Latency Impact**: What is the typical impact of Wiz.io’s scans on system performance in high-transaction environments (e.g., e-commerce platforms, financial trading systems)? What steps are taken to minimize latency?
+   - **High Availability**: How does Wiz.io ensure high availability and redundancy, especially when scanning critical data stores in production environments?
+
+### 9. **User Experience and Usability**
+   - **Ease of Use**: What is the overall user experience like for administrators and security teams using Wiz.io? Is the UI intuitive, and how much training is required to get started?
+   - **Customization**: How customizable is the interface and dashboards? Can security teams tailor dashboards to their specific needs and priorities (e.g., by data type, risk level, or compliance standard)?
+   - **Visualization of Risk**: Does Wiz.io offer data visualization features to help users easily understand data risks and security posture (e.g., heat maps, risk scores, trend graphs)?
+
+### 10. **Data Discovery and Inventory**
+   - **Automated Discovery**: How does Wiz.io automate the discovery of new and existing data stores in the environment? Can it detect shadow IT data sources that may not be officially cataloged?
+   - **Inventory Management**: Does Wiz.io provide a complete inventory of data sources, including metadata, security configurations, and risk levels? How frequently is this inventory updated?
+
+### 11. **Incident Response**
+   - **Incident Correlation**: Does Wiz.io integrate with incident response tools to correlate identified risks with ongoing security incidents? How quickly can it provide insights during an active security incident?
+   - **Root Cause Analysis**: How does Wiz.io assist with root cause analysis when sensitive data is exposed? Does it provide forensic data for investigating breaches?
+
+### 12. **Training and Support**
+   - **Training Resources**: What kind of training resources does Wiz.io offer for new customers (e.g., webinars, documentation, or in-person training)? Is there a learning path for different roles, such as security analysts or administrators?
+   - **Customer Support**: What levels of customer support are available (e.g., basic vs premium support)? How responsive is the support team to critical issues during and after implementation?
+
+### 13. **Innovation and Roadmap**
+   - **Product Development**: What upcoming features or improvements are on the product roadmap? Are there planned enhancements to core features like data discovery, scanning, or compliance reporting?
+   - **Customer Feedback Loop**: How does Wiz.io gather customer feedback for future improvements? Is there a formal mechanism for customers to request new features or enhancements?
+
+### 14. **Deployment Flexibility**
+   - **Deployment Models**: What deployment options does Wiz.io offer (cloud-native, on-premises, hybrid)? Are there specific requirements or limitations for deployment in different environments?
+   - **Multi-Cloud and Hybrid Support**: How well does Wiz.io support multi-cloud and hybrid environments? Are there any limitations when dealing with cross-cloud data security?
+   - **Data Residency**: Does Wiz.io allow for customization of data residency and sovereignty settings? Can organizations control where their sensitive data is processed and stored?
+
+By addressing these broader areas, you’ll get a more comprehensive understanding of how Wiz.io fits into your security strategy, its robustness, and how it adapts to different use cases and organizational needs.
